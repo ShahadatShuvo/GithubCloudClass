@@ -1,24 +1,47 @@
-let arrStr = ["Hurry", "spoils", "the", "curry"];
+let arr = ["geek", "geeks", "geeky", "geekforgeek", "germants"];
+// g , ge, gee, geek
 
-let w1 = "Hurry";
-let w2 = "curry";
-// output: 3
+// Psudocode
+// 1. find the smallest word/string.
+// 2. match the characters with the smallest word.
+// 3. display the heighest matched characters.
 
-let idx1;
-let idx2;
-for (let i = 0; i < arrStr.length; i++) {
-  if (arrStr[i] === w1) {
-    idx1 = i;
-  }
-  if (arrStr[i] === w2) {
-    idx2 = i;
+// 1. find the smallest word/string.
+let smallestLen = Infinity;
+let smallStr = "";
+
+for (let i = 0; i < arr.length; i++) {
+  let currentLen = arr[i].length; // 4 2
+  if (currentLen < smallestLen) {
+    smallestLen = currentLen; // 2
+    smallStr = arr[i];
   }
 }
+console.log(smallestLen);
+console.log(smallStr);
 
-console.log(idx2 - idx1);
+// 2. match the characters with the smallest word. 3. display the heighest matched characters.
 
-// Text Repeater...
+let output = "";
+let temp = 1;
+let slice = smallStr.slice(0, temp); // g
 
-// Hello world . 50
-
-let str = "my text [580]"; // 580
+while (temp <= smallStr.length) {
+  let flag = 0;
+  let currentSlice = "";
+  for (let i = 0; i < arr.length; i++) {
+    currentSlice = arr[i].slice(0, temp); // g
+    if (currentSlice === slice) {
+      flag = 1;
+    } else {
+      flag = 0;
+      break;
+    }
+  }
+  if (flag === 1) {
+    output = slice;
+  }
+  temp++;
+  slice = smallStr.slice(0, temp);
+}
+console.log(output);
