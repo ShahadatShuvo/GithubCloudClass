@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- tailwindcss CDN  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="w-full h-[100vh] flex justify-center items-center">
+      <div class="w-[50%] h-[50%] bg-gray-200 rounded p-5">
+        <div class="py-1 flex w-full">
+          <label for="fullName" class="text-red-500 font-bold text-xl w-[27%]"
+            ><span class="text-blue-500">Full</span> Name:</label
+          >
+          <input
+            type="text"
+            name="fullName"
+            id="fullName"
+            value=""
+            class="px-2"
+          />
+        </div>
+        <div class="py-1 flex w-full">
+          <label for="roll" class="text-red-500 font-bold text-xl w-[27%]"
+            ><span class="text-blue-500">Ro</span>ll:</label
+          >
+          <input type="text" name="roll" id="roll" value="" class="px-2" />
+        </div>
+        <div class="py-1 flex w-full">
+          <label for="address" class="text-red-500 font-bold text-xl w-[27%]"
+            ><span class="text-blue-500">Addr</span>ess:</label
+          >
+          <input
+            type="text"
+            name="address"
+            id="address"
+            value=""
+            class="px-2"
+          />
+        </div>
+        <div class="py-1 flex w-full">
+          <label for="mobile" class="text-red-500 font-bold text-xl w-[27%]"
+            ><span class="text-blue-500">Mob</span>ile:</label
+          >
+          <input type="text" name="mobile" id="mobile" value="" class="px-2" />
+        </div>
+        <div class="py-1 flex w-full">
+          <label for="bloodGroup" class="text-red-500 font-bold text-xl w-[27%]"
+            ><span class="text-blue-500">Blood</span> Group:</label
+          >
+          <input
+            type="text"
+            name="bloodGroup"
+            id="bloodGroup"
+            value=""
+            class="px-2"
+            placeholder="(O+)"
+          />
+        </div>
+        <div class="mt-2 flex w-full">
+          <input
+            id="btn"
+            type="button"
+            value="Submit"
+            class="bg-blue-500 text-white px-2 rounded active:bg-red-400"
+          />
+        </div>
+      </div>
+      <div class="ml-4 w-[30%] h-[50%] bg-gray-200 rounded p-5">
+        <p id="showData"></p>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
