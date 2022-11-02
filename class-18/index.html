@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Guess the number from 1 to 5</h1>
+
+    <div>
+      <label for="value">Choose Your Number:</label>
+      <input type="number" name="value" id="value" value="" />
+      <input type="button" onclick="onSubmit()" value="Submit" />
+    </div>
+
+    <div
+      id="output"
+      style="border: 2px solid black; padding: 5px; margin-top: 50px"
+    >
+      <div style="display: inline-block">
+        <h3>Computer Picked: <span id="comPicked"></span></h3>
+        <h3>You Guessed: <span id="userPicked"></span></h3>
+      </div>
+      <h1 id="win" style="display: inline-block; color: green">
+        Congrats! You Win..
+      </h1>
+      <h1 id="lost" style="display: inline-block; color: red">
+        Opps. You Lost!
+      </h1>
+    </div>
+  </body>
+  <script src="./app.js"></script>
+</html>
