@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>Magic Dekhun</h1>
+      <h1 id="surprise"></h1>
+      <button onclick="changeMe()">Click koron moja dekhun</button>
+    </div>
+    <div id="parentDiv" class="odd">
+      <h1>first div[0]</h1>
+      <p id="myPara"></p>
+    </div>
+    <div class="even">
+      <h2>second div[1]</h2>
+      <p>para form 2nd div</p>
+    </div>
+    <div class="odd">
+      <h2>third div[2]</h2>
+      <p>para form 3rd div</p>
+    </div>
+    <div class="even">
+      <h2>fourth div[3]</h2>
+      <p>para form 4th div</p>
+    </div>
+    <div class="odd">
+      <h2>Fifth div[4]</h2>
+      <p>para form 5th div</p>
+    </div>
+  </body>
+
+  <script>
+    let para = document.getElementById("myPara");
+    para.innerHTML = "para form 1st div";
+    document.getElementById("parentDiv").style.textAlign = "center";
+    document.getElementById("parentDiv").style.color = "red";
+    let allDiv = document.getElementsByTagName("div");
+    console.log(allDiv);
+    for (let i = 0; i < allDiv.length; i++) {
+      allDiv[i].style.textAlign = "center";
+    }
+
+    let oddDiv = document.getElementsByClassName("odd");
+    let evenDiv = document.getElementsByClassName("even");
+    // for (let i = 0; i < oddDiv.length; i++) {
+    //   oddDiv[i].style.color = "red";
+    // }
+    // for (let i = 0; i < evenDiv.length; i++) {
+    //   evenDiv[i].style.color = "blue";
+    // }
+    for (let i = 0; i < allDiv.length; i++) {
+      if (i % 2 == 0) {
+        allDiv[i].style.color = "blue";
+      } else {
+        allDiv[i].style.color = "red";
+      }
+    }
+
+    let amkDhoren = document.getElementById("surprise");
+    let colorArr = ["red", "green", "orange", "purple", "yellow", "black"];
+
+    let flag = 0;
+    function changeMe() {
+      document.getElementById("surprise").style.fontWeight = "bold";
+      function randomRange(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      let randonValue = randomRange(0, 5);
+      // step:1 -> flag = 0
+      // step:2 -> flag = 1
+      if (flag === 0) {
+        document.getElementById("surprise").style.display = "none";
+        document.getElementById("surprise").innerHTML = "Flag 0";
+        flag = 1;
+      } else {
+        document.getElementById("surprise").style.display = "block";
+        document.getElementById("surprise").innerHTML = "Flag 1";
+        flag = 0;
+        document.getElementById(
+          "surprise"
+        ).style.color = `${colorArr[randonValue]}`;
+      }
+    }
+  </script>
+</html>
