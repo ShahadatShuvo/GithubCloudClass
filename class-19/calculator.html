@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CSS  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Calculator</title>
+  </head>
+  <body id="body">
+    <div class="mx-5 flex justify-end">
+      <button
+        id="btnChange"
+        onclick="changeMode()"
+        class="bg-gray-200 text-black rounded-md px-4 py-2 mt-2 active:bg-blue-400"
+      >
+        Dark Mode
+      </button>
+    </div>
+    <div class="w-full h-[100vh] flex justify-center items-center">
+      <div
+        id="calculator"
+        class="text-2xl bg-blue-200 w-[30%] h-[66%] border-2 border-x-gray-200 border-y-gray-100 p-5"
+      >
+        <!-- display section  -->
+        <div id="display" class="text-right border-2 border-gray-100 p-3">
+          30
+        </div>
+
+        <!-- button group row1 -->
+        <div class="mt-8 flex gap-3 w-full justify-between">
+          <div
+            class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+          >
+            +
+          </div>
+          <div
+            class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+          >
+            -
+          </div>
+          <div
+            class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+          >
+            x
+          </div>
+          <div
+            class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+          >
+            /
+          </div>
+        </div>
+        <!-- parent div  -->
+        <div class="w-full h-auto flex mt-3">
+          <!-- digits section  -->
+          <div id="digits" class="w-3/4 mr-3">
+            <div class="flex gap-3 w-full justify-between mb-3">
+              <div
+                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+              >
+                7
+              </div>
+              <div
+                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+              >
+                8
+              </div>
+              <div
+                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+              >
+                9
+              </div>
+            </div>
+            <div class="flex gap-3 w-full justify-between mb-3">
+              <div
+                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+              >
+                4
+              </div>
+              <div
+                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+              >
+                5
+              </div>
+              <div
+                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+              >
+                6
+              </div>
+            </div>
+            <div class="flex gap-3 w-full justify-between mb-3">
+              <div
+                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+              >
+                1
+              </div>
+              <div
+                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+              >
+                2
+              </div>
+              <div
+                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+              >
+                3
+              </div>
+            </div>
+            <div class="flex gap-3 w-full justify-between">
+              <div
+                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+              >
+                0
+              </div>
+              <div
+                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+              >
+                .
+              </div>
+              <div
+                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-red-500"
+              >
+                C
+              </div>
+            </div>
+          </div>
+          <!-- equal button  -->
+          <div
+            id="result"
+            class="w-[23%] border border-gray-100 flex justify-center items-center cursor-pointer select-none active:bg-green-500"
+          >
+            =
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
