@@ -81,12 +81,75 @@ function clearScreen() {
   display.innerHTML = displayData;
 }
 
+function makeResult(arr) {
+  let operands = ["÷", "×", "+", "-"];
+  for (let i = 0; i < operands.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[j] === operands[i]) {
+        let n1 = Number(arr[j - 1]);
+        let n2 = Number(arr[j + 1]);
+        let res;
+        if (i === 0) {
+          res = n1 / n2;
+        } else if (i === 1) {
+          res = n1 * n2;
+        } else if (i === 2) {
+          res = n1 + n2;
+        } else {
+          res = n1 - n2;
+        }
+        arr.splice(j - 1, 3, res);
+        j--;
+      }
+    }
+    console.log(arr);
+  }
+  return arr;
+}
+
 function calculation() {
   if (displayData.length === 0) {
     display.innerHTML = displayData;
   } else {
     let arr = [];
-    for (let i = 0; i < displayData.length; i++) {}
+    let temp = 0;
+    if (
+      displayData[0] === "+" ||
+      displayData[0] === "-" ||
+      displayData[0] === "×" ||
+      displayData[0] === "÷"
+    ) {
+      arr.push(0);
+      arr.push(displayData[0]);
+      arr[2] = displayData[1];
+      temp = 4;
+    }
+    let value = "";
+    console.log(displayData);
+    for (let i = temp; i < displayData.length; i++) {
+      if (
+        displayData[i] === "+" ||
+        displayData[i] === "-" ||
+        displayData[i] === "×" ||
+        displayData[i] === "÷"
+      ) {
+        if (value.length) {
+          arr.push(value);
+          value = "";
+        }
+        arr.push(displayData[i]);
+      } else {
+        value += displayData[i];
+      }
+    }
+    if (value.length) {
+      arr.push(value);
+      value = "";
+    }
+    console.log(arr);
+    let result = makeResult(arr);
+    displayData = result;
+    display.innerHTML = result;
   }
 }
 
