@@ -5,12 +5,15 @@ let flag = 0;
 
 function changeMode() {
   if (flag === 0) {
-    body.style.backgroundColor = "black";
+    body.style.backgroundColor = "#0E1424";
     calculator.style.backgroundColor = "#38BDF8";
     btnChange.innerHTML = "White Mode";
     flag = 1;
   } else {
-    location.reload();
+    body.style.backgroundColor = "white";
+    calculator.style.backgroundColor = "#BFDBFE";
+    btnChange.innerHTML = "Dark Mode";
+    flag = 0;
   }
 }
 
@@ -19,6 +22,7 @@ function changeMode() {
 //  1+5-3+4*2+4/2
 
 let display = document.getElementById("display");
+let inputs = document.getElementById("inputs");
 let btnPlus = document.getElementById("btn-plus");
 let btnMinus = document.getElementById("btn-minus");
 let btnMulti = document.getElementById("btn-multi");
@@ -113,16 +117,10 @@ function calculation() {
   } else {
     let arr = [];
     let temp = 0;
-    if (
-      displayData[0] === "+" ||
-      displayData[0] === "-" ||
-      displayData[0] === "×" ||
-      displayData[0] === "÷"
-    ) {
-      arr.push(0);
-      arr.push(displayData[0]);
-      arr[2] = displayData[1];
-      temp = 4;
+    if (displayData[0] === "-") {
+      let value = Number(displayData[1]) * -1;
+      arr.push(value);
+      temp = 2;
     }
     let value = "";
     console.log(displayData);
@@ -148,6 +146,7 @@ function calculation() {
     }
     console.log(arr);
     let result = makeResult(arr);
+    inputs.innerHTML = `${displayData} =`;
     displayData = result;
     display.innerHTML = result;
   }
