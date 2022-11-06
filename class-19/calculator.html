@@ -25,31 +25,35 @@
         class="text-2xl bg-blue-200 w-[30%] h-[66%] border-2 border-x-gray-200 border-y-gray-100 p-5"
       >
         <!-- display section  -->
-        <div id="display" class="text-right border-2 border-gray-100 p-3">
-          30
-        </div>
-
+        <div
+          id="display"
+          class="text-right border-2 border-gray-100 p-3 min-h-[58px]"
+        ></div>
         <!-- button group row1 -->
         <div class="mt-8 flex gap-3 w-full justify-between">
           <div
-            class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+            id="btn-plus"
+            class="btn border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
           >
             +
           </div>
           <div
-            class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+            id="btn-minus"
+            class="btn border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
           >
             -
           </div>
           <div
-            class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+            id="btn-multi"
+            class="btn border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
           >
             x
           </div>
           <div
-            class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+            id="btn-div"
+            class="btn border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
           >
-            /
+            ÷
           </div>
         </div>
         <!-- parent div  -->
@@ -58,68 +62,80 @@
           <div id="digits" class="w-3/4 mr-3">
             <div class="flex gap-3 w-full justify-between mb-3">
               <div
-                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+                id="btn7"
+                class="btn border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
               >
                 7
               </div>
               <div
-                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+                id="btn8"
+                class="btn border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
               >
                 8
               </div>
               <div
-                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+                id="btn9"
+                class="btn border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
               >
                 9
               </div>
             </div>
             <div class="flex gap-3 w-full justify-between mb-3">
               <div
-                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+                id="btn4"
+                class="btn border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
               >
                 4
               </div>
               <div
-                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+                id="btn5"
+                class="btn border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
               >
                 5
               </div>
               <div
-                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+                id="btn6"
+                class="btn border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
               >
                 6
               </div>
             </div>
             <div class="flex gap-3 w-full justify-between mb-3">
               <div
-                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+                id="btn1"
+                class="btn border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
               >
                 1
               </div>
               <div
-                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+                id="btn2"
+                class="btn border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
               >
                 2
               </div>
               <div
-                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+                id="btn3"
+                class="btn border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
               >
                 3
               </div>
             </div>
             <div class="flex gap-3 w-full justify-between">
               <div
-                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+                id="btn0"
+                class="btn border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
               >
                 0
               </div>
               <div
-                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
+                id="btn-dot"
+                class="btn border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-blue-500"
               >
                 .
               </div>
               <div
-                class="border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-red-500"
+                id="btnC"
+                class="btn border border-gray-100 w-full text-center p-2 cursor-pointer select-none active:bg-red-500"
               >
                 C
               </div>
@@ -127,8 +143,8 @@
           </div>
           <!-- equal button  -->
           <div
-            id="result"
-            class="w-[23%] border border-gray-100 flex justify-center items-center cursor-pointer select-none active:bg-green-500"
+            id="equal"
+            class="btn w-[23%] border border-gray-100 flex justify-center items-center cursor-pointer select-none active:bg-green-500"
           >
             =
           </div>
