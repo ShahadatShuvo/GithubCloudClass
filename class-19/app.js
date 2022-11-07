@@ -1,3 +1,5 @@
+// Vanilla JS
+
 let btnChange = document.getElementById("btnChange");
 let body = document.getElementById("body");
 let calculator = document.getElementById("calculator");
@@ -128,6 +130,7 @@ function calculation() {
     }
     let value = "";
     console.log(displayData);
+    // displayData =  "2+3-5*6/2"
     for (let i = temp; i < displayData.length; i++) {
       if (
         displayData[i] === "+" ||
