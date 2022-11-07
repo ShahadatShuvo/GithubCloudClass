@@ -1,18 +1,22 @@
 let btnChange = document.getElementById("btnChange");
 let body = document.getElementById("body");
 let calculator = document.getElementById("calculator");
+let whole = document.getElementById("whole");
 let flag = 0;
 
+whole.style.backgroundImage = "url('./img/cosmos-5809271_1920.png')";
 function changeMode() {
   if (flag === 0) {
+    whole.style.backgroundImage = "";
+    whole.style.backgroundColor = "#0E1424";
     body.style.backgroundColor = "#0E1424";
-    calculator.style.backgroundColor = "#38BDF8";
-    btnChange.innerHTML = "White Mode";
+    // calculator.style.backgroundColor = "#00B1BA";
+    btnChange.innerHTML = "White";
     flag = 1;
   } else {
-    body.style.backgroundColor = "white";
-    calculator.style.backgroundColor = "#BFDBFE";
-    btnChange.innerHTML = "Dark Mode";
+    calculator.style.backgroundColor = "transparent";
+    whole.style.backgroundImage = "url('./img/cosmos-5809271_1920.png')";
+    btnChange.innerHTML = "Dark";
     flag = 0;
   }
 }
@@ -76,7 +80,7 @@ function displayValue(value) {
   } else if (value === ".") {
     displayData += ".";
   }
-  // console.log(displayData);
+  console.log("displayData: " + displayData);
   display.innerHTML = displayData;
 }
 
@@ -161,7 +165,6 @@ btn5.addEventListener("click", () => displayValue(5));
 btn6.addEventListener("click", () => displayValue(6));
 btn7.addEventListener("click", () => displayValue(7));
 btn8.addEventListener("click", () => displayValue(8));
-btn9.addEventListener("click", () => displayValue(9));
 btn9.addEventListener("click", () => displayValue(9));
 btnPlus.addEventListener("click", () => displayValue("+"));
 btnMinus.addEventListener("click", () => displayValue("-"));
