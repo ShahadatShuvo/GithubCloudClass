@@ -11,7 +11,7 @@ function changeMode() {
     whole.style.backgroundColor = "#0E1424";
     body.style.backgroundColor = "#0E1424";
     // calculator.style.backgroundColor = "#00B1BA";
-    btnChange.innerHTML = "White";
+    btnChange.innerHTML = "Light";
     flag = 1;
   } else {
     calculator.style.backgroundColor = "transparent";
