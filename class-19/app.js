@@ -4,6 +4,7 @@ let btnChange = document.getElementById("btnChange");
 let body = document.getElementById("body");
 let calculator = document.getElementById("calculator");
 let whole = document.getElementById("whole");
+
 let flag = 0;
 
 whole.style.backgroundImage = "url('./img/cosmos-5809271_1920.png')";
@@ -46,7 +47,7 @@ let btn9 = document.getElementById("btn9");
 let btnDot = document.getElementById("btn-dot");
 let btnC = document.getElementById("btnC");
 let equal = document.getElementById("equal");
-let allButtons = document.getElementsByClassName("btn");
+let del = document.getElementById("del");
 
 let displayData = "";
 
@@ -159,6 +160,11 @@ function calculation() {
   }
 }
 
+function deleteFromEnd() {
+  displayData = displayData.slice(0, displayData.length - 1);
+  display.innerHTML = displayData;
+}
+
 btn0.addEventListener("click", () => displayValue(0)); // method
 btn1.addEventListener("click", () => displayValue(1));
 btn2.addEventListener("click", () => displayValue(2));
@@ -176,3 +182,4 @@ btnDiv.addEventListener("click", () => displayValue("/"));
 btnDot.addEventListener("click", () => displayValue("."));
 btnC.addEventListener("click", clearScreen);
 equal.addEventListener("click", calculation);
+del.addEventListener("click", deleteFromEnd);
