@@ -52,37 +52,7 @@ let del = document.getElementById("del");
 let displayData = "";
 
 function displayValue(value) {
-  if (value === 0) {
-    displayData += 0;
-  } else if (value === 1) {
-    displayData += 1;
-  } else if (value === 2) {
-    displayData += 2;
-  } else if (value === 3) {
-    displayData += 3;
-  } else if (value === 4) {
-    displayData += 4;
-  } else if (value === 5) {
-    displayData += 5;
-  } else if (value === 6) {
-    displayData += 6;
-  } else if (value === 7) {
-    displayData += 7;
-  } else if (value === 8) {
-    displayData += 8;
-  } else if (value === 9) {
-    displayData += 9;
-  } else if (value === "+") {
-    displayData += "+";
-  } else if (value === "-") {
-    displayData += "-";
-  } else if (value === "*") {
-    displayData += "×";
-  } else if (value === "/") {
-    displayData += "÷";
-  } else if (value === ".") {
-    displayData += ".";
-  }
+  displayData += value;
   console.log("displayData: " + displayData);
   display.innerHTML = displayData;
 }
@@ -139,8 +109,8 @@ function calculation() {
         displayData[i] === "×" ||
         displayData[i] === "÷"
       ) {
-        if (value.length) {
-          arr.push(value);
+        if (value.length > 0) {
+          arr.push(value); // 580 [580]
           value = "";
         }
         arr.push(displayData[i]);

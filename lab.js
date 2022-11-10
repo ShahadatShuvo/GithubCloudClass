@@ -1,4 +1,4 @@
-let displayData = "5+5";
+let displayData = "58369+580";
 
 // operands = +,-,*,/
 let arr = [];
@@ -30,6 +30,7 @@ let result = makeResult(arr);
 console.log(result);
 // /,*,+,-
 
+// arr = [5]
 function makeResult(arr) {
   // BODMAS
   let operands = ["÷", "×", "+", "-"];
@@ -46,7 +47,7 @@ function makeResult(arr) {
         } else if (i === 2) {
           res = n1 + n2;
         } else {
-          res = n1 - n2;
+          res = n1 - n2; // n1, operand, n2
         }
         arr.splice(j - 1, 3, res);
         j--;
