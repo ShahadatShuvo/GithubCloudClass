@@ -50,11 +50,27 @@ let equal = document.getElementById("equal");
 let del = document.getElementById("del");
 
 let displayData = "";
+// 5++
 
 function displayValue(value) {
-  displayData += value;
-  console.log("displayData: " + displayData);
-  display.innerHTML = displayData;
+  if (displayData.length > 14) {
+    // kisoina
+  } else {
+    displayData += value;
+    let len = displayData.length;
+    if (len >= 2) {
+      let l1 = displayData[len - 1];
+      let l2 = displayData[len - 2];
+      if (
+        (l1 === "+" || l1 === "-" || l1 === "×" || l1 === "÷") &&
+        (l2 === "+" || l2 === "-" || l2 === "×" || l2 === "÷")
+      ) {
+        displayData = displayData.slice(0, len - 2) + l1;
+      }
+    }
+    console.log("displayData: " + displayData);
+    display.innerHTML = displayData;
+  }
 }
 
 function clearScreen() {
@@ -93,14 +109,15 @@ function calculation() {
     display.innerHTML = displayData;
   } else {
     let arr = [];
-    let temp = 0;
-    if (displayData[0] === "-") {
-      let value = Number(displayData[1]) * -1;
-      arr.push(value);
-      temp = 2;
-    }
     let value = "";
-    console.log(displayData);
+    let temp = 0;
+    // -20+5
+    // -5+3 // -5
+    if (displayData[0] === "-") {
+      value += displayData[0];
+      temp = 1;
+    }
+
     // displayData =  "2+3-5*6/2"
     for (let i = temp; i < displayData.length; i++) {
       if (
@@ -147,8 +164,8 @@ btn8.addEventListener("click", () => displayValue(8));
 btn9.addEventListener("click", () => displayValue(9));
 btnPlus.addEventListener("click", () => displayValue("+"));
 btnMinus.addEventListener("click", () => displayValue("-"));
-btnMulti.addEventListener("click", () => displayValue("*"));
-btnDiv.addEventListener("click", () => displayValue("/"));
+btnMulti.addEventListener("click", () => displayValue("×"));
+btnDiv.addEventListener("click", () => displayValue("÷"));
 btnDot.addEventListener("click", () => displayValue("."));
 btnC.addEventListener("click", clearScreen);
 equal.addEventListener("click", calculation);

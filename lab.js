@@ -83,3 +83,9 @@ function makeResult(arr) {
 //   }
 //   return arr;
 // }
+
+// displayData =  -5+3
+// arr =  [ -5, +, 3] // -2
+
+let str = "-5+2";
+console.log(str.slice(0, 2));
