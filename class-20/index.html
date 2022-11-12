@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS CDN  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <section id="parent" class="flex justify-center">
+      <div
+        id="card"
+        class="w-[90%] lg:w-[75%] bg-[#F02D34] mt-20 px-10 text-white flex flex-wrap justify-center lg:justify-between rounded-lg py-10 lg:py-0"
+      >
+        <div
+          class="w-[80%] lg:w-[30%] flex flex-col justify-center items-center lg:items-start"
+        >
+          <p class="uppercase text-sm text-gray-200 font-light">20% off</p>
+          <p class="uppercase font-extrabold text-6xl mt-2">Fine</p>
+          <p class="uppercase font-extrabold text-6xl mb-2">smile</p>
+          <p class="uppercase text-sm">15 Nov - 7 Dec</p>
+        </div>
+        <div class="w-[80%] lg:w-[40%] flex justify-center">
+          <img
+            src="./img//a64b345016e96adfb8849af5521c8e0ecfe8f027-555x555.webp"
+            alt=""
+            class="w-full h-[100%] lg:h-[120%] lg:mt-[-70px]"
+          />
+        </div>
+        <div
+          class="w-[80%] lg:w-[30%] flex flex-col justify-center items-center lg:items-start"
+        >
+          <p class="capitalize">best solo Air</p>
+          <p
+            class="capitalize font-extrabold text-2xl lg:text-4xl mb-1 lg:mb-0"
+          >
+            Summer Sale
+          </p>
+          <p class="text-xs">
+            Company that's Grown from 270 t0 480 Employees From Last 12 Months
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="my-10">
+        <h2 class="text-center text-primary text-3xl font-bold capitalize">
+          Best Seller products
+        </h2>
+        <p class="text-sm font-light text-center text-gray-500">
+          speaker There are many variation passages
+        </p>
+        <div
+          id="products"
+          class="w-[80%] mx-auto my-5 flex flex-wrap items-center justify-center gap-3"
+        >
+          <!-- single product start -->
+          <!-- <div id="card">
+            <div
+              class="h-[200px] w-[200px] rounded-lg bg-[#EBEBEB] cursor-pointer"
+            >
+              <img id="myImg" src="./img/earphones_a_4.webp" alt="" />
+            </div>
+
+            <div class="mt-2 text-sm font-bold">
+              <p id="name" class="text-gray-500">solo headphone</p>
+              <p id="price">$80</p>
+            </div>
+          </div> -->
+          <!-- single product end -->
+        </div>
+      </div>
+    </section>
+
+    <script src="./productsData.js"></script>
+  </body>
+</html>
