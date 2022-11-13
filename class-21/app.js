@@ -33,7 +33,6 @@ function displayData(current, temp) {
     temp.innerHTML = current;
     trackingArr.push(temp); // one3, two2
   }
-  console.log(decisionObj);
 
   if (current === "0") {
     currentTurn = "X";
