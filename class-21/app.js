@@ -190,7 +190,12 @@ function displayData(current, temp) {
 }
 
 function resetGame() {
-  window.location.reload();
+  board = [
+    ["", "", ""],
+    ["", "", ""],
+    ["", "", ""],
+  ];
+  flag = 0;
 }
 
 one1.addEventListener("click", () => displayData(currentTurn, one1));
