@@ -36,67 +36,101 @@ if (random === 1) {
 console.log(currentTurn); // 0,
 whosTurn.innerHTML = `${currentTurn}'s Turn Now!`;
 
+function colorColumn(val) {
+  if (val === 0) {
+    one1.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+    two1.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+    three1.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+  } else if (val === 1) {
+    one2.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+    two2.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+    three2.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+  } else {
+    one3.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+    two3.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+    three3.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+  }
+}
+function colorRow(val) {
+  if (val === 0) {
+    one1.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+    one2.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+    one3.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+  } else if (val === 1) {
+    two1.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+    two2.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+    two3.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+  } else {
+    three1.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+    three2.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+    three3.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+  }
+}
+function colorDaigonalR() {
+  one1.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+  two2.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+  three3.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+}
+function colorDaigonalL() {
+  one3.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+  two2.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+  three1.classList = `w-1/3 h-[100px] border border-white flex justify-center items-center bg-green-500 active:bg-blue-500 select-none`;
+}
+
 function checkResult(board) {
   let res = "";
   for (let i = 0; i < board.length; i++) {
-    let counterX = 0;
-    let counter0 = 0;
+    let counterClmX = 0;
+    let counterClm0 = 0;
+    let counterRwX = 0;
+    let counterRw0 = 0;
     for (let j = 0; j < board.length; j++) {
-      // column: j same but i change
-      //        (row, column)
-      // column : 0, 0    0, 1   0, 2
-      // column : 1, 0    1, 1   1, 2
-      // column : 2, 0    2, 1   2, 3
       if (board[j][i] === "X") {
-        counterX++;
+        counterClmX++;
       }
       if (board[j][i] === "0") {
-        counter0++;
+        counterClm0++;
       }
-    }
-    if (counter0 === 3) {
-      res = "0";
-    }
-    if (counterX === 3) {
-      res = "X";
-    }
-  }
-  // check for rows
-  for (let i = 0; i < board.length; i++) {
-    let counterX = 0;
-    let counter0 = 0;
-    for (let j = 0; j < board.length; j++) {
-      // row: x same but y change
-      //        (row, column)
-      // Row: 0,0; 0,1; 0,2
-      // Row: 1,0; 1,1; 1,2
-      // Row: 2,0; 2,1; 2,2
       if (board[i][j] === "X") {
-        counterX++;
+        counterRwX++;
       }
       if (board[i][j] === "0") {
-        counter0++;
+        counterRw0++;
       }
     }
-    if (counter0 === 3) {
+    if (counterClm0 === 3) {
       res = "0";
+      colorColumn(i);
     }
-    if (counterX === 3) {
+    if (counterClmX === 3) {
       res = "X";
+      colorColumn(i);
+    }
+    if (counterRw0 === 3) {
+      res = "0";
+      colorRow(i);
+    }
+    if (counterRwX === 3) {
+      res = "X";
+      colorRow(i);
     }
   }
 
   if (board[0][0] === "0" && board[1][1] === "0" && board[2][2] === "0") {
     res = "0";
+    colorDaigonalR();
   }
   if (board[0][0] === "X" && board[1][1] === "X" && board[2][2] === "X") {
     res = "X";
+    colorDaigonalR();
   }
   if (board[0][2] === "0" && board[1][1] === "0" && board[2][0] === "0") {
     res = "0";
+    colorDaigonalL();
   }
   if (board[0][2] === "X" && board[1][1] === "X" && board[2][0] === "X") {
     res = "X";
+    colorDaigonalL();
   }
   return res;
 }
