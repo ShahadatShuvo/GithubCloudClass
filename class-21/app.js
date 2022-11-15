@@ -1,6 +1,6 @@
 let win = document.getElementById("win");
 let whosTurn = document.getElementById("whosTurn");
-let restart = document.getElementById("Restart");
+let restart = document.getElementById("restart");
 let one1 = document.getElementById("1-1");
 let one2 = document.getElementById("1-2");
 let one3 = document.getElementById("1-3");
@@ -10,6 +10,8 @@ let two3 = document.getElementById("2-3");
 let three1 = document.getElementById("3-1");
 let three2 = document.getElementById("3-2");
 let three3 = document.getElementById("3-3");
+
+let flag = 0;
 
 let board = [
   ["", "", ""],
@@ -136,34 +138,7 @@ function checkResult(board) {
 }
 
 function displayData(current, temp) {
-  if (temp === one1) {
-    board[0][0] = current;
-  }
-  if (temp === one2) {
-    board[0][1] = current;
-  }
-  if (temp === one3) {
-    board[0][2] = current;
-  }
-  if (temp === two1) {
-    board[1][0] = current;
-  }
-  if (temp === two2) {
-    board[1][1] = current;
-  }
-  if (temp === two3) {
-    board[1][2] = current;
-  }
-  if (temp === three1) {
-    board[2][0] = current;
-  }
-  if (temp === three2) {
-    board[2][1] = current;
-  }
-  if (temp === three3) {
-    board[2][2] = current;
-  }
-  if (trackingArr.indexOf(temp) === -1) {
+  if (trackingArr.indexOf(temp) === -1 && flag === 0) {
     temp.innerHTML = current;
     trackingArr.push(temp); // one3, two2
   }
@@ -173,13 +148,49 @@ function displayData(current, temp) {
   } else {
     currentTurn = "0";
   }
+
+  if (flag === 0) {
+    if (temp === one1) {
+      board[0][0] = current;
+    }
+    if (temp === one2) {
+      board[0][1] = current;
+    }
+    if (temp === one3) {
+      board[0][2] = current;
+    }
+    if (temp === two1) {
+      board[1][0] = current;
+    }
+    if (temp === two2) {
+      board[1][1] = current;
+    }
+    if (temp === two3) {
+      board[1][2] = current;
+    }
+    if (temp === three1) {
+      board[2][0] = current;
+    }
+    if (temp === three2) {
+      board[2][1] = current;
+    }
+    if (temp === three3) {
+      board[2][2] = current;
+    }
+  }
+
   whosTurn.innerHTML = `${currentTurn}'s Turn Now!`;
   console.log(board);
   let winner = checkResult(board);
   if (winner.length) {
     win.innerHTML = `Winner is ${winner}`;
     whosTurn.innerHTML = ``;
+    flag = 1;
   }
+}
+
+function resetGame() {
+  window.location.reload();
 }
 
 one1.addEventListener("click", () => displayData(currentTurn, one1));
@@ -191,3 +202,4 @@ two3.addEventListener("click", () => displayData(currentTurn, two3));
 three1.addEventListener("click", () => displayData(currentTurn, three1));
 three2.addEventListener("click", () => displayData(currentTurn, three2));
 three3.addEventListener("click", () => displayData(currentTurn, three3));
+restart.addEventListener("click", resetGame);
